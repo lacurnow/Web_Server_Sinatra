@@ -13,7 +13,13 @@ get '/bye' do
   "buhbye"
 end
 
-get '/cat' do
+get '/random_cat' do
   @name = ["Amigo", "Misty", "Almond"].sample
+  erb(:index)
+end
+
+get '/named-cat'  do
+  p @name = params[:name]
+  p @color = params[:color]
   erb(:index)
 end
